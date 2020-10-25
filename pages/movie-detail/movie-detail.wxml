@@ -54,15 +54,7 @@
           <view class="cast-container">
               <image class="cast-img" src="{{item.img}}"></image>
               <text>{{item.name}}</text>
-          </view>
-                    <view class="cast-container">
-              <image class="cast-img" src="{{item.img}}"></image>
-              <text>{{item.name}}</text>
-          </view>
-                    <view class="cast-container">
-              <image class="cast-img" src="{{item.img}}"></image>
-              <text>{{item.name}}</text>
-          </view>
+          </view>   
         </block>
       </scroll-view>
     </view>

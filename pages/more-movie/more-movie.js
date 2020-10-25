@@ -20,7 +20,7 @@ Page({
     wx.request({
       url: app.gBaseUrl + type,
       data:{
-        start:0,
+        start:1,
         count:12
       },
       success:(res)=>{
@@ -81,7 +81,7 @@ Page({
     wx.request({
       url: app.gBaseUrl + this.data._type,
       data:{
-        start:0,
+        start:1,
         count:12,
       },
       success:(res)=>{
