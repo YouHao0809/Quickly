@@ -27,12 +27,12 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.2",
-	"appid": "wx4fac522fb61664c7",
+	"appid": "wxd23e0576e0ea384c",
 	"projectname": "flower",
 	"debugOptions": {
 		"hidedInDevtools": []
