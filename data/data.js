@@ -1,5 +1,5 @@
 var postList = [
-  {
+  /*{
     title: "2020LPL夏季赛季后赛观赛指南",
     content: "8月9号，LPL常规赛收官之战结束，在事关季后赛轮次的比赛中关键对局中，SN战胜了FPX，为本赛季常规赛画上句号。进入季后赛的战队依次为，TES、JDG、IG、SN、V5、LGD、WE、FPX",
     imgSrc: "/images/lpl.png",
@@ -95,8 +95,10 @@ var postList = [
             title: "奉献-韩寒",
             coverImg: "https://y.gtimg.cn/music/photo_new/T002R300x300M000002sNbWp3royJG_1.jpg?max_age=2592000"
         }
-    },
+    },*/
 ]
+
+
 
 export {
   postList

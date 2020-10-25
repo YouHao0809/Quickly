@@ -23,9 +23,10 @@ Component({
    */
   methods: {
     onTap(event){
-      const pid = this.properties.res.postId
+      const url = this.properties.res.url
+      console.log(url)
       this.triggerEvent('posttap',{
-        pid
+        url
       })
     },
   }
