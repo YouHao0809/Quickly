@@ -13,7 +13,7 @@ Page({
 
   onTap:function(params) {
     wx.switchTab({
-      url:"/pages/posts/posts"
+      url:"/pages/movies/movies"
     })
   },
 

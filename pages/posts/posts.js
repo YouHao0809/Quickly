@@ -26,7 +26,8 @@ Page({
     // ES6
 
     wx.request({
-      url: 'http://v.juhe.cn/toutiao/index?type=top&key=3dc86b09a2ee2477a5baa80ee70fcdf5',
+      url: 'http://v.juhe.cn/toutiao/index?type=top&key=a3ebc3b3509a9848e07c5a42afe0db2a',
+      
       success:(res)=>{
         console.log(res.data)
         for (let i = 0; i < 3; i++) {

@@ -1,4 +1,5 @@
 // pages/post-detail.js
+var WxParse = require('../../wxParse/wxParse.js');
 var website
 Page({
 
@@ -17,7 +18,16 @@ Page({
       website : options.pid
     })
       
-
+    wx.request({
+      url: options.pid,
+      success:(res)=>{
+        console.log(res.data)
+        var that = this;
+        WxParse.wxParse('article', 'html', res.data, that, 5);
+      }
+    })
+    
+    
   },
 
   /**
