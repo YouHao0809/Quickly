@@ -7,7 +7,7 @@
     "pages/movie-detail/movie-detail"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#C22A1E"
+    "navigationBarBackgroundColor": "#EFDEB0"
   },
   "tabBar": {
     "borderStyle": "white",

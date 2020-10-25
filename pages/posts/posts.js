@@ -1,16 +1,6 @@
 var postList = []
-var temp = [{
-  'title':'',
-  'imgSrc':'',
-  'url':''},
-  {
-    'title':'',
-    'imgSrc':'',
-    'url':''},
-    {
-      'title':'',
-      'imgSrc':'',
-      'url':''}]
+var temp = []
+var date
 
 Page({
 
@@ -38,16 +28,36 @@ Page({
    wx.request({
       url: 'http://news-at.zhihu.com/api/4/news/latest',
       success:(res)=>{
-        console.log(res.data),
-        temp[0]['title'] = res.data['stories'][0]['title'],
-        temp[0]['imgSrc'] = res.data['stories'][0]['images'][0],
-        temp[0]['url'] = res.data['stories'][0]['url'],
-        temp[1]['title'] = res.data['stories'][1]['title'],
-        temp[1]['imgSrc'] = res.data['stories'][1]['images'][0],
-        temp[1]['url'] = res.data['stories'][1]['url'],
-        temp[2]['title'] = res.data['stories'][2]['title'],
-        temp[2]['imgSrc'] = res.data['stories'][2]['images'][0],
-        temp[2]['url'] = res.data['stories'][2]['url'],
+        console.log(res.data)
+        for (let i = 0; i < res.data['stories'].length; i++) {
+          var map = {'title':'',
+          'imgSrc':'',
+          'url':''}
+          map['title'] = res.data['stories'][i]['title']
+          map['imgSrc'] = res.data['stories'][i]['images'][0]
+          map['url'] = res.data['stories'][i]['url']
+          temp.push(map)
+        }
+        this.setData({
+          postList : temp,
+          date : res.data['date']
+        })
+      }
+    })
+
+    wx.request({
+      url: 'http://v.juhe.cn/toutiao/index?type=top&key=3dc86b09a2ee2477a5baa80ee70fcdf5',
+      success:(res)=>{
+        console.log(res.data)
+        for (let i = 0; i < 6; i++) {
+          var map = {'title':'',
+          'imgSrc':'',
+          'url':''}
+          map['title'] = res.data['result']['data'][i]['title']
+          map['imgSrc'] = res.data['result']['data'][i]['thumbnail_pic_s']
+          map['url'] = res.data['result']['data'][i]['url']
+          temp.push(map)
+        }
         this.setData({
           postList : temp
         })
