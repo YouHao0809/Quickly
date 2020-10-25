@@ -21,7 +21,7 @@ Page({
     wx.request({
       url: app.gBaseUrl + 'in_theaters',
       data:{
-        start:0,
+        start:4,
         count:3
       },
       success:(res)=>{
@@ -34,7 +34,7 @@ Page({
     wx.request({
       url: app.gBaseUrl + 'coming_soon',
       data:{
-        start:0,
+        start:1,
         count:3
       },
       success:(res)=>{
@@ -46,7 +46,7 @@ Page({
     wx.request({
       url: app.gBaseUrl + 'top250',
       data:{
-        start:0,
+        start:10,
         count:3
       },
       success:(res)=>{
