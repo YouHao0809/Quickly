@@ -25,6 +25,25 @@ Page({
     // JSON
     // ES6
 
+    wx.request({
+      url: 'http://v.juhe.cn/toutiao/index?type=top&key=3dc86b09a2ee2477a5baa80ee70fcdf5',
+      success:(res)=>{
+        console.log(res.data)
+        for (let i = 0; i < 3; i++) {
+          var map = {'title':'',
+          'imgSrc':'',
+          'url':''}
+          map['title'] = res.data['result']['data'][i]['title']
+          map['imgSrc'] = res.data['result']['data'][i]['thumbnail_pic_s']
+          map['url'] = res.data['result']['data'][i]['url']
+          temp.push(map)
+        }
+        this.setData({
+          postList : temp
+        })
+      }
+    })
+
    wx.request({
       url: 'http://news-at.zhihu.com/api/4/news/latest',
       success:(res)=>{
@@ -41,25 +60,6 @@ Page({
         this.setData({
           postList : temp,
           date : res.data['date']
-        })
-      }
-    })
-
-    wx.request({
-      url: 'http://v.juhe.cn/toutiao/index?type=top&key=3dc86b09a2ee2477a5baa80ee70fcdf5',
-      success:(res)=>{
-        console.log(res.data)
-        for (let i = 0; i < 6; i++) {
-          var map = {'title':'',
-          'imgSrc':'',
-          'url':''}
-          map['title'] = res.data['result']['data'][i]['title']
-          map['imgSrc'] = res.data['result']['data'][i]['thumbnail_pic_s']
-          map['url'] = res.data['result']['data'][i]['url']
-          temp.push(map)
-        }
-        this.setData({
-          postList : temp
         })
       }
     })
@@ -84,10 +84,11 @@ Page({
   },
 
   onGoToDetail(event){
-      const url = event.currentTarget.dataset.url
-      console.log(url)
+      const pid = event.detail.url
+      console.log(pid)
+      
       wx.navigateTo({
-        url: '' + url
+        url:'/pages/post-detail/post-detail?pid=' + pid
       })
   },
 

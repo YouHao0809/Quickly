@@ -21,7 +21,7 @@ Page({
     wx.request({
       url: app.gBaseUrl + 'in_theaters',
       data:{
-        start:4,
+        start:5,
         count:3
       },
       success:(res)=>{

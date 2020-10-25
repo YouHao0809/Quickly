@@ -1,0 +1,2 @@
+<!--pages/post-detail.wxml-->
+<text>{{website}}</text>

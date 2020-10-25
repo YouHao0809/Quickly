@@ -1,10 +1,10 @@
 
-  <view class="post-container">
+  <view bind:tap="onTap" class="post-container">
 
 		<text class="post-title" >{{res.title}}</text>
 
 		<image class="post-image" src="{{res.imgSrc}} "></image>
 
-		<text class="post-content">{{res.url}}</text>
+		<!-- <text class="post-content">{{res.url}}</text> -->
 
 	</view>
